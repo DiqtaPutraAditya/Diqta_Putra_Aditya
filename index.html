@@ -3,59 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portofolio Diqta Putra Aditya - Mahasiswa Politeknik Elektronika Negeri Surabaya, minat di IoT, robotika, dan pemrograman.">
-  <title>Portofolio Diqta Putra Aditya</title>
-  <link rel="stylesheet" href="main.css">
-  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <meta name="description" content="Diqta Putra Aditya – Robotics & IoT Enthusiast">
+  <title>Diqta Putra Aditya – Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- favicon bisa ditambah kalau ada -->
 </head>
 <body>
-  <header>
-    <h1>Diqta Putra Aditya</h1>
-    <p>Mahasiswa Politeknik Elektronika Negeri Surabaya | Robotics & IoT Enthusiast</p>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header id="home">
+    <div class="header-content">
+      <h1>Hai, saya Diqta Putra Aditya</h1>
+      <p>Mahasiswa Elektronika | Robotics & IoT Enthusiast</p>
+    </div>
   </header>
 
-  <section>
-    <h2>Tentang Saya</h2>
+  <section id="about">
+    <h2>About Me</h2>
     <p>
-      Saya adalah mahasiswa <strong>Politeknik Elektronika Negeri Surabaya (PENS)</strong> dengan minat di bidang 
-      <strong>robotika, IoT, dan kecerdasan buatan</strong>. Berpengalaman dalam merancang sistem berbasis mikrokontroler 
-      (Teensy, ESP32, Arduino), pengolahan data sensor, hingga integrasi dengan <strong>ROS2</strong> dan 
-      <strong>komputer vision (YOLOv8, Intel RealSense)</strong>. 
+      Saya mahasiswa Teknik Elektronika di PENS, tertarik dengan robotika, embedded systems, dan pembuatan sistem monitoring IoT.
+    </p>
+    <p>
+      Berpengalaman dengan ESP32, Teensy, ROS2, YOLOv8, desain PCB, dan dashboard real-time.
     </p>
   </section>
 
-  <section>
-    <h2>Proyek</h2>
-    <ul>
-      <li><strong>GUI Monitoring Robot</strong> – Membuat antarmuka berbasis Python & Tkinter untuk menampilkan data real-time dari robot (2024).</li>
-      <li><strong>Object Detection dengan YOLOv8</strong> – Implementasi YOLOv8 untuk deteksi objek, dikombinasikan dengan kamera Intel RealSense untuk estimasi jarak (2024).</li>
-      <li><strong>Komunikasi Multi-Teensy dengan micro-ROS</strong> – Teensy 4.0 (slave) mengirim data sensor ke Teensy 4.1 (master) yang kemudian diteruskan ke Jetson Nano via ROS2 (2024).</li>
-      <li><strong>Modul Pembelajaran IoT berbasis ESP32</strong> – Desain PCB custom dengan sensor ultrasonik, LDR, PIR, serta driver motor. Terintegrasi MQTT (Mosquitto) & Node-RED dashboard (2023).</li>
-    </ul>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <!-- contoh satu project -->
+      <div class="project-item">
+        <img src="assets/project1.png" alt="Modul IoT ESP32">
+        <h3>Modul Pembelajaran IoT ESP32</h3>
+        <p>Sensor Ultrasonik, LDR, PIR + driver motor + MQTT & Node-RED dashboard real-time.</p>
+        <a href="https://github.com/username/project1" target="_blank">Code →</a>
+      </div>
+      <!-- project lainya -->
+    </div>
   </section>
 
-  <section>
-    <h2>Sertifikat</h2>
-    <ul>
-      <li>Python for Data Science & Machine Learning – Udemy (2025)</li>
-      <li>Deep Learning Specialization – Udemy (2025)</li>
-      <li>Workshop Pengaturan Otomatis – PENS (2024)</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Keahlian</h2>
-    <ul>
-      <li><strong>Pemrograman:</strong> Python, C/C++, JavaScript</li>
-      <li><strong>Embedded System:</strong> Arduino, ESP32, Teensy, PlatformIO, FreeRTOS, micro-ROS</li>
-      <li><strong>Computer Vision & AI:</strong> OpenCV, YOLOv8, TensorFlow</li>
-      <li><strong>IoT & Networking:</strong> MQTT (Mosquitto), Node-RED, Django</li>
-      <li><strong>Tools:</strong> Git, KiCAD, MATLAB, Tkinter</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Kontak</h2>
+  <section id="contact">
+    <h2>Contact Me</h2>
     <p>Email: <a href="mailto:diqta@example.com">diqta@example.com</a></p>
     <p>GitHub: <a href="https://github.com/diqta" target="_blank">github.com/diqta</a></p>
     <p>LinkedIn: <a href="https://linkedin.com/in/diqta" target="_blank">linkedin.com/in/diqta</a></p>
