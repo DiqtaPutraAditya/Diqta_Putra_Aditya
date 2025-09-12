@@ -259,6 +259,28 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
+        /* Certificate Button - NEW STYLE */
+        .cert__cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white !important;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .cert__cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+        }
+
         /* Section Styles */
         .section {
             padding: 4rem 0;
@@ -307,6 +329,50 @@
             .section__subtitle {
                 font-size: 1.125rem;
             }
+        }
+
+        /* Certificate Card Styles */
+        .cert__card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .cert__card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .cert__icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cert__title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .cert__description {
+            color: #4a5568;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .cert__tags {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
         }
 
         /* About Section */
@@ -637,6 +703,27 @@
         section {
             scroll-margin-top: 80px;
         }
+
+        /* Responsive Design for Certificate Section */
+        @media (max-width: 768px) {
+            .cert__card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .cert__tags {
+                gap: 0.5rem;
+            }
+            
+            .tech-tag {
+                font-size: 0.75rem;
+                padding: 0.3rem 0.6rem;
+            }
+
+            .cert__cta {
+                padding: 0.875rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -735,7 +822,7 @@
         </div>
     </section>
 
-      <!-- Certifications Section -->
+    <!-- Certifications Section -->
     <section id="certifications" class="section">
         <div class="container">
             <div class="section__header">
@@ -745,25 +832,23 @@
                 </p>
             </div>
 
-            <div style="text-align: center;">
-                <div style="background: white; padding: 3rem 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); max-width: 600px; margin: 0 auto;">
-                    <div style="font-size: 4rem; margin-bottom: 1.5rem;">🏆</div>
-                    <h3 style="font-size: 1.5rem; font-weight: 600; color: #2d3748; margin-bottom: 1rem;">15+ Sertifikat Teknologi</h3>
-                    <p style="color: #4a5568; margin-bottom: 2rem; line-height: 1.6;">
-                        Dari berbagai bidang teknologi hingga Computer Vision dan PCB Design. 
-                        Lihat koleksi lengkap sertifikat dan pencapaian saya.
-                    </p>
-                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
-                        <span class="tech-tag">Teknologi</span>
-                        <span class="tech-tag">Computer Vision</span>
-                        <span class="tech-tag">ESP32</span>
-                        <span class="tech-tag">PCB Design</span>
-                        <span class="tech-tag">Embedded</span>
-                    </div>
-                    <a href="sertif.html" class="hero__cta" style="display: inline-flex;">
-                        🎓Lihat Semua Sertifikat→
-                    </a>
+            <div class="cert__card">
+                <div class="cert__icon">🏆</div>
+                <h3 class="cert__title">15+ Sertifikat Teknologi</h3>
+                <p class="cert__description">
+                    Dari berbagai bidang teknologi hingga Computer Vision dan PCB Design. 
+                    Lihat koleksi lengkap sertifikat dan pencapaian saya.
+                </p>
+                <div class="cert__tags">
+                    <span class="tech-tag">Teknologi</span>
+                    <span class="tech-tag">Computer Vision</span>
+                    <span class="tech-tag">ESP32</span>
+                    <span class="tech-tag">PCB Design</span>
+                    <span class="tech-tag">Embedded</span>
                 </div>
+                <a href="sertif.html" class="cert__cta">
+                    🎓 Lihat Semua Sertifikat →
+                </a>
             </div>
         </div>
     </section>
@@ -796,56 +881,6 @@
                             <span class="tech-tag">MQTT</span>
                             <span class="tech-tag">Node-RED</span>
                             <span class="tech-tag">Sensors</span>
-                        </div>
-                        <div class="project__links">
-                            <a href="https://github.com/diqta/iot-learning-module" class="project__link">View Code</a>
-                            <a href="#" class="project__link">Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project">
-                    <div class="project__image">
-                        🚀 Robot Navigation<br>ROS2 Autonomous System
-                    </div>
-                    <div class="project__content">
-                        <h3 class="project__title">Robot Navigation System ROS2</h3>
-                        <p class="project__description">
-                            Sistem navigasi robot otonom menggunakan framework ROS2 dengan implementasi algoritma 
-                            path planning dan obstacle avoidance. Robot dapat bernavigasi secara mandiri dalam 
-                            lingkungan dinamis menggunakan sensor LIDAR dan computer vision.
-                        </p>
-                        <div class="project__tech">
-                            <span class="tech-tag">ROS2</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">LIDAR</span>
-                            <span class="tech-tag">OpenCV</span>
-                        </div>
-                        <div class="project__links">
-                            <a href="https://github.com/diqta/ros2-navigation" class="project__link">View Code</a>
-                            <a href="#" class="project__link">Documentation</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project">
-                    <div class="project__image">
-                        👁️ Smart Detection<br>YOLOv8 Monitoring System
-                    </div>
-                    <div class="project__content">
-                        <h3 class="project__title">Smart Monitoring dengan YOLOv8</h3>
-                        <p class="project__description">
-                            Sistem monitoring cerdas menggunakan YOLOv8 untuk deteksi objek real-time. 
-                            Dapat mengidentifikasi dan melacak berbagai objek dengan akurasi tinggi, 
-                            dilengkapi notifikasi otomatis dan data logging untuk analisis mendalam.
-                        </p>
-                        <div class="project__tech">
-                            <span class="tech-tag">YOLOv8</span>
-                            <span class="tech-tag">OpenCV</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Real-time</span>
                         </div>
                         <div class="project__links">
                             <a href="https://github.com/diqta/yolo-monitoring" class="project__link">View Code</a>
@@ -906,39 +941,8 @@
 
     <script>
         // Mobile Menu Functionality
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileMenuClose = document.getElementById('mobileMenuClose');
-        const mobileMenuLinks = document.querySelectorAll('.mobile-menu__link');
-
-        // Open mobile menu
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileMenu.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
-        });
-
-        // Close mobile menu
-        mobileMenuClose.addEventListener('click', function() {
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Allow scrolling
-        });
-
-        // Close menu when clicking on a link
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
-        });
-
-        // Close menu when clicking outside
-        mobileMenu.addEventListener('click', function(e) {
-            if (e.target === mobileMenu) {
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
-
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1002,4 +1006,21 @@
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animation
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '1';
+        });
+    </script>
+</body>
+</html>
