@@ -735,6 +735,39 @@
         </div>
     </section>
 
+      <!-- Certifications Section -->
+    <section id="certifications" class="section">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Sertifikat & Pencapaian</h2>
+                <p class="section__subtitle">
+                    Saya telah memperoleh berbagai sertifikat di bidang teknologi dan embedded systems
+                </p>
+            </div>
+
+            <div style="text-align: center;">
+                <div style="background: white; padding: 3rem 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); max-width: 600px; margin: 0 auto;">
+                    <div style="font-size: 4rem; margin-bottom: 1.5rem;">🏆</div>
+                    <h3 style="font-size: 1.5rem; font-weight: 600; color: #2d3748; margin-bottom: 1rem;">15+ Sertifikat Teknologi</h3>
+                    <p style="color: #4a5568; margin-bottom: 2rem; line-height: 1.6;">
+                        Dari berbagai bidang teknologi hingga Computer Vision dan PCB Design. 
+                        Lihat koleksi lengkap sertifikat dan pencapaian saya.
+                    </p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
+                        <span class="tech-tag">Teknologi</span>
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">ESP32</span>
+                        <span class="tech-tag">PCB Design</span>
+                        <span class="tech-tag">Embedded</span>
+                    </div>
+                    <a href="sertif.html" class="hero__cta" style="display: inline-flex;">
+                        🎓 Lihat Semua Sertifikat →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects" class="section projects">
         <div class="container">
@@ -844,10 +877,10 @@
                     <a href="mailto:diqta@example.com" class="contact__link">
                         📧 Email
                     </a>
-                    <a href="https://github.com/DiqtaPutraAditya" target="_blank" class="contact__link">
+                    <a href="https://github.com/diqta" target="_blank" class="contact__link">
                         💻 GitHub
                     </a>
-                    <a href="https://www.linkedin.com/in/diqta-putra-aditya-308615296/" target="_blank" class="contact__link">
+                    <a href="https://linkedin.com/in/diqta" target="_blank" class="contact__link">
                         💼 LinkedIn
                     </a>
                     <a href="https://instagram.com/diqta" target="_blank" class="contact__link">
@@ -872,6 +905,40 @@
     </footer>
 
     <script>
+        // Mobile Menu Functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu__link');
+
+        // Open mobile menu
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+
+        // Close mobile menu
+        mobileMenuClose.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Allow scrolling
+        });
+
+        // Close menu when clicking on a link
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Close menu when clicking outside
+        mobileMenu.addEventListener('click', function(e) {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
