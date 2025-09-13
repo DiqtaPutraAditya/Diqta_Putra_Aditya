@@ -26,6 +26,7 @@
             color: #2d3748;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
+            padding-top: 80px;
         }
 
         /* Container */
@@ -48,6 +49,11 @@
             padding: 1rem 0;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
             margin-bottom: 2rem;
+            position: fixed;   /* header jadi nempel di atas */
+            top: 0;            /* posisinya di paling atas */
+            left: 0;
+            right: 0;
+            z-index: 1000; 
         }
 
         .nav {
@@ -107,33 +113,6 @@
             margin: 0 auto;
         }
 
-        /* Filter Tabs */
-        .filter-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        .filter-tab {
-            background: rgba(255, 255, 255, 0.8);
-            border: 2px solid transparent;
-            color: #4a5568;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .filter-tab.active,
-        .filter-tab:hover {
-            background: #667eea;
-            color: white;
-            border-color: #667eea;
-        }
-
         /* Certificates Grid */
         .certificates-grid {
             display: grid;
@@ -150,6 +129,8 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            flex-direction: column;
         }
 
         .certificate:hover {
@@ -218,6 +199,7 @@
         .certificate__actions {
             display: flex;
             gap: 1rem;
+            margin-top: auto; /* penting! dorong tombol ke bawah */
         }
 
         .cert-link {
@@ -267,51 +249,6 @@
             border-left: 5px solid #9f7aea;
         }
 
-        /* Stats Section */
-        .stats-section {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 20px;
-            margin: 3rem auto;
-            text-align: center;
-            max-width: 800px;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-item {
-            padding: 1rem;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #667eea;
-            display: block;
-        }
-
-        .stat-label {
-            color: #4a5568;
-            font-weight: 500;
-            margin-top: 0.5rem;
-        }
-
-        /* Footer */
-        .footer {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            color: #4a5568;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 4rem;
-        }
-
         /* Animation */
         @keyframes fadeInUp {
             from {
@@ -326,6 +263,16 @@
 
         .fade-in {
             animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            color: #4a5568;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
         }
     </style>
 </head>
@@ -352,177 +299,178 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section container fade-in">
-        <h2 style="font-size: 1.5rem; font-weight: 600; color: #2d3748; margin-bottom: 1rem;">Ringkasan Pencapaian</h2>
-        <div class="stats-grid">
-            <div class="stat-item">
-                <span class="stat-number">6</span>
-                <div class="stat-label">Total Sertifikat</div>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">5</span>
-                <div class="stat-label">Platform Belajar</div>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">3</span>
-                <div class="stat-label">Bidang Keahlian</div>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">2023</span>
-                <div class="stat-label">Tahun Aktif</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Filter Tabs -->
-    <!-- <div class="container">
-        <div class="filter-tabs">
-            <div class="filter-tab active" data-filter="all">Semua</div>
-            <div class="filter-tab" data-filter="iot">IoT & Networking</div>
-            <div class="filter-tab" data-filter="robotics">Robotics</div>
-            <div class="filter-tab" data-filter="programming">Programming</div>
-            <div class="filter-tab" data-filter="ai">AI & Computer Vision</div>
-            <div class="filter-tab" data-filter="hardware">Hardware Design</div>
-        </div>
-    </div> -->
-
     <!-- Certificates Grid -->
     <section class="container">
         <div class="certificates-grid">
-            <!-- Certificate 1: IoT Fundamentals -->
-            <div class="certificate fade-in" data-category="iot">
+            <!-- Sertifikat-satunya sama persis dengan punyamu, jadi nggak aku hapus biar tinggal copy langsung -->
+            <!-- Certificate 1 -->
+            <div class="certificate fade-in" data-category="organization">
                 <div class="certificate__header">
-                    <div class="certificate__badge">🌐</div>
+                    <div class="certificate__badge">🎓</div>
                     <div class="certificate__info">
-                        <h3 class="certificate__title">Internet of Things (IoT) Fundamentals</h3>
-                        <div class="certificate__issuer">Cisco Networking Academy</div>
-                        <div class="certificate__date">Januari 2024</div>
+                        <h3 class="certificate__title">Panitia JRC (Java Robotic Competition)</h3>
+                        <div class="certificate__issuer">Politeknik Elektronika Negeri Surabaya</div>
+                        <div class="certificate__date">2024</div>
                     </div>
                 </div>
                 <p class="certificate__description">
-                    Mempelajari konsep dasar IoT, arsitektur sistem, protokol komunikasi, dan implementasi solusi IoT untuk berbagai industri.
+                    Berkontribusi sebagai panitia dalam penyelenggaraan JRC, mengatur jalannya kompetisi dan membantu peserta dalam aspek teknis.
                 </p>
                 <div class="certificate__skills">
-                    <span class="skill-tag">IoT Architecture</span>
-                    <span class="skill-tag">MQTT</span>
-                    <span class="skill-tag">Sensors</span>
-                    <span class="skill-tag">Networking</span>
+                    <span class="skill-tag">Organization</span>
+                    <span class="skill-tag">Event Management</span>
+                    <span class="skill-tag">Robotics</span>
                 </div>
                 <div class="certificate__actions">
-                    <a href="#" class="cert-link primary">Lihat Sertifikat</a>
-                    <a href="#" class="cert-link">Verifikasi</a>
+                    <a href="https://drive.google.com/file/d/1CaLIOOJKDUVnHP45sZvY-zyr8uqW9ltJ/view?usp=sharing" class="cert-link primary">Lihat Sertifikat</a>
                 </div>
             </div>
 
-            <!-- Certificate 2: ROS2 Introduction -->
+            <!-- Certificate 2 -->
+            <div class="certificate fade-in" data-category="competition">
+                <div class="certificate__header">
+                    <div class="certificate__badge">🏆</div>
+                    <div class="certificate__info">
+                        <h3 class="certificate__title">KRI Divisi KRSRI – Juara 3</h3>
+                        <div class="certificate__issuer">Kontes Robot Indonesia</div>
+                        <div class="certificate__date">2024</div>
+                    </div>
+                </div>
+                <p class="certificate__description">
+                    Berhasil meraih juara 3 pada divisi KRSRI di Kontes Robot Indonesia dengan tim EILERO, berfokus pada robot SAR berkaki empat.
+                </p>
+                <div class="certificate__skills">
+                    <span class="skill-tag">Robotics</span>
+                    <span class="skill-tag">Teamwork</span>
+                    <span class="skill-tag">Problem Solving</span>
+                </div>
+                <div class="certificate__actions">
+                    <a href="https://drive.google.com/file/d/1nAflgRCa-8DQVAdvA1iNTU2tTcgqCZlW/view?usp=sharing" class="cert-link primary">Lihat Sertifikat</a>
+                </div>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="certificate fade-in" data-category="data">
+                <div class="certificate__header">
+                    <div class="certificate__badge">🐍</div>
+                    <div class="certificate__info">
+                        <h3 class="certificate__title">Python for Data Science and Machine Learning Bootcamp</h3>
+                        <div class="certificate__issuer">Udemy</div>
+                        <div class="certificate__date">2024</div>
+                    </div>
+                </div>
+                <p class="certificate__description">
+                    Kursus lengkap tentang Python untuk Data Science, Machine Learning, dan analisis data menggunakan pustaka populer seperti NumPy, Pandas, Matplotlib, dan Scikit-Learn.
+                </p>
+                <div class="certificate__skills">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Data Science</span>
+                    <span class="skill-tag">Machine Learning</span>
+                </div>
+                <div class="certificate__actions">
+                    <a href="https://drive.google.com/file/d/1zYlp1GAD8YHER-aU3hwhn76tCF-SFtb-/view?usp=sharing" class="cert-link primary">Lihat Sertifikat</a>
+                </div>
+            </div>
+
+            <!-- Certificate 4 -->
             <div class="certificate fade-in" data-category="robotics">
                 <div class="certificate__header">
                     <div class="certificate__badge">🤖</div>
                     <div class="certificate__info">
-                        <h3 class="certificate__title">Introduction to ROS2</h3>
-                        <div class="certificate__issuer">The Construct</div>
-                        <div class="certificate__date">Desember 2023</div>
+                        <h3 class="certificate__title">Self Driving and ROS2 – Learn by Doing! Map and Localization</h3>
+                        <div class="certificate__issuer">Udemy</div>
+                        <div class="certificate__date">2024</div>
                     </div>
                 </div>
                 <p class="certificate__description">
-                    Memahami Robot Operating System 2 (ROS2), node communication, topic/service management, dan pengembangan aplikasi robotika modern.
+                    Mempelajari dasar ROS2 untuk sistem autonomous vehicle, termasuk konsep mapping, localization, dan integrasi sensor menggunakan simulasi nyata.
                 </p>
                 <div class="certificate__skills">
                     <span class="skill-tag">ROS2</span>
-                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Autonomous Systems</span>
                     <span class="skill-tag">Robotics</span>
-                    <span class="skill-tag">Node Communication</span>
                 </div>
                 <div class="certificate__actions">
                     <a href="#" class="cert-link primary">Lihat Sertifikat</a>
-                    <a href="#" class="cert-link">Verifikasi</a>
+                    <!-- <a href="#" class="cert-link">Verifikasi</a> -->
                 </div>
             </div>
 
-            <!-- Certificate 3: ESP32 Advanced Programming -->
-            <div class="certificate fade-in" data-category="programming">
-                <div class="certificate__header">
-                    <div class="certificate__badge">🔧</div>
-                    <div class="certificate__info">
-                        <h3 class="certificate__title">ESP32 Advanced Programming</h3>
-                        <div class="certificate__issuer">Udemy</div>
-                        <div class="certificate__date">November 2023</div>
-                    </div>
-                </div>
-                <p class="certificate__description">
-                    Menguasai pemrograman lanjutan ESP32 meliputi WiFi/Bluetooth, FreeRTOS, deep sleep, dan integrasi dengan cloud services.
-                </p>
-                <div class="certificate__skills">
-                    <span class="skill-tag">ESP32</span>
-                    <span class="skill-tag">C/C++</span>
-                    <span class="skill-tag">FreeRTOS</span>
-                    <span class="skill-tag">WiFi/BLE</span>
-                </div>
-                <div class="certificate__actions">
-                    <a href="#" class="cert-link primary">Lihat Sertifikat</a>
-                    <a href="#" class="cert-link">Verifikasi</a>
-                </div>
-            </div>
-
-            <!-- Certificate 4: Computer Vision with Python -->
-            <div class="certificate fade-in" data-category="ai">
-                <div class="certificate__header">
-                    <div class="certificate__badge">👁️</div>
-                    <div class="certificate__info">
-                        <h3 class="certificate__title">Computer Vision with Python</h3>
-                        <div class="certificate__issuer">Coursera</div>
-                        <div class="certificate__date">Oktober 2023</div>
-                    </div>
-                </div>
-                <p class="certificate__description">
-                    Implementasi computer vision menggunakan OpenCV dan Python, termasuk object detection, image processing, dan machine learning.
-                </p>
-                <div class="certificate__skills">
-                    <span class="skill-tag">OpenCV</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Machine Learning</span>
-                    <span class="skill-tag">Image Processing</span>
-                </div>
-                <div class="certificate__actions">
-                    <a href="#" class="cert-link primary">Lihat Sertifikat</a>
-                    <a href="#" class="cert-link">Verifikasi</a>
-                </div>
-            </div>
-
-            <!-- Certificate 5: Advanced Communication Systems -->
-            <div class="certificate fade-in" data-category="technology">
-                <div class="certificate__header">
-                    <div class="certificate__badge">📡</div>
-                    <div class="certificate__info">
-                        <h3 class="certificate__title">Advanced Communication Systems</h3>
-                        <div class="certificate__issuer">Industrial Technology Academy</div>
-                        <div class="certificate__date">September 2023</div>
-                    </div>
-                </div>
-                <p class="certificate__description">
-                    Menguasai protokol komunikasi untuk sistem modern dan pengembangan dashboard monitoring menggunakan platform teknologi terbaru.
-                </p>
-                <div class="certificate__skills">
-                    <span class="skill-tag">Communication</span>
-                    <span class="skill-tag">Monitoring</span>
-                    <span class="skill-tag">Dashboard</span>
-                    <span class="skill-tag">Data Visualization</span>
-                </div>
-                <div class="certificate__actions">
-                    <a href="#" class="cert-link primary">Lihat Sertifikat</a>
-                    <a href="#" class="cert-link">Verifikasi</a>
-                </div>
-            </div>
-
-            <!-- Certificate 6: PCB Design with KiCad -->
-            <div class="certificate fade-in" data-category="hardware">
+            <!-- Certificate 5 -->
+            <div class="certificate fade-in" data-category="automation">
                 <div class="certificate__header">
                     <div class="certificate__badge">⚡</div>
                     <div class="certificate__info">
-                        <h3 class="certificate__title">PCB Design with KiCad</h3>
-                        <div class="certificate__issuer">Electronics Hub</div>
-                        <div class="certificate__date">Agustus 2023</div>
+                        <h3 class="certificate__title">Workshop PLC</h3>
+                        <div class="certificate__issuer">Hima Elektronika – PENS</div>
+                        <div class="certificate__date">2023</div>
                     </div>
                 </div>
-                <p class
+                <p class="certificate__description">
+                    Workshop tentang dasar-dasar PLC (Programmable Logic Controller) untuk otomasi industri, termasuk pemrograman ladder diagram.
+                </p>
+                <div class="certificate__skills">
+                    <span class="skill-tag">PLC</span>
+                    <span class="skill-tag">Automation</span>
+                    <span class="skill-tag">Ladder Logic</span>
+                </div>
+                <div class="certificate__actions">
+                    <a href="#" class="cert-link primary">Lihat Sertifikat</a>
+                </div>
+            </div>
+
+            <!-- Certificate 6 -->
+            <div class="certificate fade-in" data-category="robotics">
+                <div class="certificate__header">
+                    <div class="certificate__badge">🔧</div>
+                    <div class="certificate__info">
+                        <h3 class="certificate__title">Workshop Robotics PENS – Divisi Hardware</h3>
+                        <div class="certificate__issuer">Tim Robot PENS</div>
+                        <div class="certificate__date">2023</div>
+                    </div>
+                </div>
+                <p class="certificate__description">
+                    Workshop internal tentang sistem robotika hardware, meliputi sensor, aktuator, dan kontroler yang digunakan pada robot.
+                </p>
+                <div class="certificate__skills">
+                    <span class="skill-tag">Robotics</span>
+                    <span class="skill-tag">Hardware</span>
+                    <span class="skill-tag">Embedded Systems</span>
+                </div>
+                <div class="certificate__actions">
+                    <a href="https://drive.google.com/file/d/1sdTbaQU135M_ehuxpF_RQXofriOhr4bo/view?usp=sharing" class="cert-link primary">Lihat Sertifikat</a>
+                </div>
+            </div>
+
+            <!-- Certificate 7 -->
+            <div class="certificate fade-in" data-category="ai">
+                <div class="certificate__header">
+                    <div class="certificate__badge">🧠</div>
+                    <div class="certificate__info">
+                        <h3 class="certificate__title">Deep Learning Specialization</h3>
+                        <div class="certificate__issuer">Udemy</div>
+                        <div class="certificate__date">2024</div>
+                    </div>
+                </div>
+                <p class="certificate__description">
+                    Mempelajari teknik deep learning, neural networks, CNN, RNN, dan aplikasi praktis untuk computer vision serta NLP.
+                </p>
+                <div class="certificate__skills">
+                    <span class="skill-tag">Deep Learning</span>
+                    <span class="skill-tag">Neural Networks</span>
+                    <span class="skill-tag">AI</span>
+                </div>
+                <div class="certificate__actions">
+                    <a href="#" class="cert-link primary">Lihat Sertifikat</a>
+                    <!-- <a href="#" class="cert-link">Verifikasi</a> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Diqta Putra Aditya - All Rights Reserved</p>
+    </footer>
+</body>
+</html>
