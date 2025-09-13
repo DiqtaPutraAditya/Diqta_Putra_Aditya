@@ -87,6 +87,21 @@
             }
         }
 
+        /* Mobile menu aktif */
+        .nav__menu.active {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: white;
+            position: absolute;
+            top: 70px; /* geser sesuai tinggi header */
+            right: 1rem;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+
         .nav__link {
             text-decoration: none;
             color: #4a5568;
@@ -605,7 +620,7 @@
 
         @media (min-width: 768px) {
             .contact__links {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
                 gap: 1.5rem;
                 margin-bottom: 2.5rem;
             }
@@ -735,6 +750,7 @@
                 <ul class="nav__menu">
                     <li><a href="#home" class="nav__link">Home</a></li>
                     <li><a href="#about" class="nav__link">About</a></li>
+                    <li><a href="#certifications" class="nav__link">Sertifikat</a></li>
                     <li><a href="#projects" class="nav__link">Projects</a></li>
                     <li><a href="#contact" class="nav__link">Contact</a></li>
                 </ul>
@@ -834,7 +850,7 @@
 
             <div class="cert__card">
                 <div class="cert__icon">🏆</div>
-                <h3 class="cert__title">15+ Sertifikat Teknologi</h3>
+                <h3 class="cert__title"> Sertifikat </h3>
                 <p class="cert__description">
                     Dari berbagai bidang teknologi hingga Computer Vision dan PCB Design. 
                     Lihat koleksi lengkap sertifikat dan pencapaian saya.
@@ -1015,7 +1031,7 @@
                 </p>
                 
                 <div class="contact__links">
-                    <a href="mailto:diqtaputraaditya2019@gmail.com" class="contact__link">
+                    <a href="https://mail.google.com/mail/?view=cm&to=diqtaputraaditya2019@gmail.com" class="contact__link">
                         📧 Email
                     </a>
                     <a href="https://github.com/DiqtaPutraAditya" target="_blank" class="contact__link">
@@ -1029,7 +1045,7 @@
                     </a> -->
                 </div>
                 
-                <a href="mailto:diqta@example.com" class="contact__cta">
+                <a href="https://mail.google.com/mail/?view=cm&to=diqtaputraaditya2019@gmail.com" class="contact__cta">
                     Hubungi Sekarang →
                 </a>
             </div>
@@ -1048,7 +1064,16 @@
     <script>
         // Mobile Menu Functionality
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        
+                // Mobile Menu Toggle
+
+        const navMenu = document.querySelector('.nav__menu');
+
+        if (mobileMenuBtn && navMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+}
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
